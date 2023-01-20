@@ -1,0 +1,27 @@
+python -m venv myenv //venv oluşturma
+myenv\scripts\activate //myenv ye girmek 
+deactivate //envden çıkmak
+django-admin startproject myproject . //django projesi oluşturma
+python manage.py runserver //projeyi çalıştırmak
+python manage.py runserver 9000 // 8000'de başka proje çalışıyorsa 9000de açar
+python manage.py startapp //uygulama oluşturma
+
+önce oluşturdupğun app'in models kısmına git ve modellerini yaz. bunun amacı sql'de otomatik tablo oluşturması.
+daha sonra ilk migrations unu yap. bunun için python manage.py makemigrations
+python manage.py superuser su oluşturmak için
+sonra python manage.py runserver ile serveri çalıştır
+
+*proje settings.py daki installed apps e app'in ismini yaz
+
+migrate= her model değişikliğinde databasenin de güncellenmesini sağlar.
+
+SERİALAZİERS ÇOKOMELLİ
+vs code de oluşturduk
+Serializers in amacı, django modellerini istediğimiz diğer formatlara(json, csv) 
+translete etmek yani dönüştürmek için kullanılır.
+
+validated_data bizim models.py’ımızda yani veritabanımıza kayıt olan doğrulanmış gerçek datamız ve biz bunu update edeceğiz. Update edip JSON ve XML’e paslamanın temelini göstereceğiz.
+Parser bizim elimizdeki datayı dictionary haline getirmemizi sağlıyor. Dictionary’de JSON, XML dosyalarında müthiş işimize gelecektir. Ayrıca JSONRenderer bizim authentication hatalarımızın yani kimlik doğrulamada oluşabilecek sorunların önüne geçerek JSON çevrimlerinde büyük rol oynamaktadır.
+
+pip install ipython //
+python manage.py shell_plus //django_extencions ile gelen kolay bir python shell
